@@ -1,5 +1,6 @@
 Raindrop[] drop = new Raindrop[100];
 Catcher catcher;
+int score = 0;
 int index = 1;
 int oldTime = 0;
 int currentTime = 0;
@@ -14,7 +15,10 @@ void setup() {
 }
 
 void draw() {
-  //println("Score:" + score);
+  textMode(CENTER);
+  fill(360);
+  text(score, width/2, height/2);
+  println("Score:" + score);
   currentTime = millis();
   timeChange = currentTime - oldTime;
   background(234, 99, 66);
@@ -23,7 +27,7 @@ void draw() {
     drop[i].drop();
     catcher.catchIt(drop[i]);
   }
-  if (timeChange>=2000) {
+  if (timeChange>=3000) {
     index++;
     oldTime = currentTime;
   }
