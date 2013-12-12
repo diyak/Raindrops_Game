@@ -16,7 +16,7 @@ void setup() {
 
 void draw() {
   background(234, 99, 66);
-  textMode(CENTER);
+  textAlign(CENTER);
   fill(360);
   text("Score: " + score, width/2, height/2);
   println("Score:" + score);
