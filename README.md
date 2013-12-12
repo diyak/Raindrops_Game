@@ -1,8 +1,6 @@
 Raindrops_Game
 ==============
 
-Version 1: Raindrops Class
-+
 Raindrops Game Algorithm
 
 1.  Create a raindrops class
