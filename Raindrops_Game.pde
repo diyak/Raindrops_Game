@@ -48,7 +48,7 @@ void draw() {
       text("YOU WIN!", width/2, height/2 - 100);
       drop[i].loc.y = height + 100;
     }
-      if(drop[i].loc.y == height){background(360);
+      if(drop[i].loc.y >= height && drop[i].loc.x >= 0){background(360);
       r = color(c, 100, 100);
       c++;
       if (c>=360) {
