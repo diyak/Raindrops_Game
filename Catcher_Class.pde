@@ -3,7 +3,7 @@ class Catcher {
   int d;
   
   Catcher() {
-    d = 50;
+    d = 100;
     loc = new PVector(mouseX, height-d);
   }
   

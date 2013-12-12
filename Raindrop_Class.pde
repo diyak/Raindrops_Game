@@ -3,7 +3,7 @@ class Raindrop {
   int d;
 
   Raindrop() {
-    d = 20;
+    d = 10;
     loc =  new PVector(random(width), -d);
     vel = new PVector(0, 1);
     acc = new PVector(0, .01);
