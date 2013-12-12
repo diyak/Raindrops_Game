@@ -22,7 +22,10 @@ The catcher should be circular, follow the mouse, and stay in the same y locatio
 6.  Create a method of checking whether the raindrop is touching the catcher
 
 7.  When a raindrop touches the catcher...
+
 8.  Make the score variable increase by 1
+
 9.  Make the raindrop disappear/reset (go to the top of the screen)
+
 10. Add a time component to the raindrops game
     The next raindrop that falls should fall a certain period of time after the one before it   
