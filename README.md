@@ -4,14 +4,14 @@ Raindrops_Game
 Version 1: Raindrops Class
 +
 Raindrops Game Algorithm
-+
+
 1.  Create a raindrops class
 +  
-+  -Ensure that the raindrops class displays the raindrop and makes it fall in the y direction only
+-Ensure that the raindrops class displays the raindrop and makes it fall in the y direction only
 +
 2.  Create a catcher class
 +  
-+  -The catcher should be circular, follow the mouse, and stay in the same y location
+-The catcher should be circular, follow the mouse, and stay in the same y location
 +
 3.  Create an array of raindrops
 +
@@ -29,5 +29,6 @@ Raindrops Game Algorithm
 +
 8.  Add a time component to the raindrops game
 
-+  -The next raindrop that falls should fall a certain period of time after the one before it
+
+  -The next raindrop that falls should fall a certain period of time after the one before it
 
