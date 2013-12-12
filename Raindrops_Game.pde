@@ -15,13 +15,13 @@ void setup() {
 }
 
 void draw() {
+  background(234, 99, 66);
   textMode(CENTER);
   fill(360);
-  text(score, width/2, height/2);
+  text("Score: " + score, width/2, height/2);
   println("Score:" + score);
   currentTime = millis();
   timeChange = currentTime - oldTime;
-  background(234, 99, 66);
   for (int i = 0; i<index; i++) {
     drop[i].display();
     drop[i].drop();
