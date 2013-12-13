@@ -36,14 +36,16 @@ void draw() {
   background(234, 99, 66);
   if (run==false) {
     //create button
-    textAlign(CENTER);
     fill(331, 97, 99);
     stroke(137, 49, 100);
     strokeWeight(5);
     ellipse(width/2, height/2, 100, 100);
     fill(360);
+    //adjust text alignment, font, and height
+    textAlign(CENTER);
     textFont(scoreFont, textHeight);
     text("Start!", width/2, height/2, textHeight);
+    //set change in color when mouse is over button
     if (dist(mouseX, mouseY, width/2, height/2)<=55) {
       fill(137, 49, 100);
       stroke(331, 97, 99);
@@ -53,6 +55,7 @@ void draw() {
       text("Start!", width/2, height/2, textHeight);
     }
   }
+  //set conditions for run==true
   if (run) {
     //adjust text font, alignment, height, and color
     textFont(scoreFont, textHeight);
@@ -129,8 +132,10 @@ void draw() {
     }
   }
 }
+//set conditions for when mouse is pressed
 void mousePressed() {
-  if (dist(mouseX, mouseY, width/2, height/2)<=50 && run==false) {
+  //when mouse is clicked inside button, run becomes opposite value
+  if (dist(mouseX, mouseY, width/2, height/2)<=55 && run==false) {
     run = !run;
   }
 }
