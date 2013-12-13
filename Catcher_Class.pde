@@ -26,10 +26,10 @@ class Catcher {
   void catchIt(Raindrop drop) {
     if (loc.dist(drop.loc) < d/2 + drop.d/2) {
       //set location of raindrop to far below screen
-      drop.loc.set(-width, height*5);
+      drop.loc.set(-width, height*-1000);
       drop.vel.set(0, 0);
       //increase score by 1
-      score++;
+      score+=20;
     }
   }
 }
