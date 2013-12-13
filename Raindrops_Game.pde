@@ -34,22 +34,24 @@ void setup() {
 void draw() {
   //color background
   background(234, 99, 66);
-  //create button
-  textAlign(CENTER);
-  fill(331, 97, 99);
-  stroke(137, 49, 100);
-  strokeWeight(5);
-  ellipse(width/2, height/2, 100, 100);
-  fill(360);
-  textFont(scoreFont, textHeight);
-  text("Start!", width/2, height/2, textHeight);
-  if (dist(mouseX, mouseY, width/2, height/2)<=55) {
-    fill(137, 49, 100);
-    stroke(331,97,99);
+  if (run==false) {
+    //create button
+    textAlign(CENTER);
+    fill(331, 97, 99);
+    stroke(137, 49, 100);
+    strokeWeight(5);
     ellipse(width/2, height/2, 100, 100);
     fill(360);
     textFont(scoreFont, textHeight);
     text("Start!", width/2, height/2, textHeight);
+    if (dist(mouseX, mouseY, width/2, height/2)<=55) {
+      fill(137, 49, 100);
+      stroke(331, 97, 99);
+      ellipse(width/2, height/2, 100, 100);
+      fill(360);
+      textFont(scoreFont, textHeight);
+      text("Start!", width/2, height/2, textHeight);
+    }
   }
   if (run) {
     //adjust text font, alignment, height, and color
@@ -128,7 +130,7 @@ void draw() {
   }
 }
 void mousePressed() {
-  if (dist(mouseX, mouseY, width/2, height/2)<=50) {
+  if (dist(mouseX, mouseY, width/2, height/2)<=50 && run==false) {
     run = !run;
   }
 }
