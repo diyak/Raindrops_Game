@@ -69,7 +69,7 @@ void draw() {
       fill(r);
       textSize(75);
       text("YOU WIN!", width/2, height/2 - 100);
-      //make raindrops go of of display
+      //make raindrops go off of display
       drop[i].loc.y = height + 100;
     }
   }
