@@ -35,7 +35,7 @@ void draw() {
   //color background
   background(234, 99, 66);
   if (run==false) {
-    //create button
+    //create start button
     fill(331, 97, 99);
     stroke(137, 49, 100);
     strokeWeight(5);
@@ -92,8 +92,27 @@ void draw() {
         fill(r);
         textSize(75);
         text("YOU WIN!", width/2, height/2 - 100);
-        //make raindrops go of of display
+        //make raindrops go off of display
         drop[i].loc.y = height + 100;
+        //create replay button
+        fill(282, 95, 99);
+        stroke(360, 100, 100);
+        strokeWeight(5);
+        ellipse(width/2, height/2, 100, 100);
+        fill(360);
+        //adjust text alignment, font, and height
+        textAlign(CENTER);
+        textFont(scoreFont, textHeight-6);
+        text("Play Again!", width/2, height/2, textHeight);
+        //set change in color when mouse is over button
+        if (dist(mouseX, mouseY, width/2, height/2)<=55) {
+          fill(360, 100, 100);
+          stroke(r);
+          ellipse(width/2, height/2, 100, 100);
+          fill(360);
+          textFont(scoreFont, textHeight-6);
+          text("Play Again!", width/2, height/2, textHeight);
+        }
       }
     }
     //set time interval between each raindrop to 3000 milliseconds = 3 seconds
@@ -135,8 +154,8 @@ void draw() {
 //set conditions for when mouse is pressed
 void mousePressed() {
   //when mouse is clicked inside button, run becomes opposite value
-  if (dist(mouseX, mouseY, width/2, height/2)<=55 && run==false) {
-    run = !run;
+  if (dist(mouseX, mouseY, width/2, height/2)<=55) {
+    run = true;
   }
 }
 
