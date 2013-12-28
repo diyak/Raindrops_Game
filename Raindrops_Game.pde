@@ -11,6 +11,7 @@ int index = 1;
 int oldTime = 0;
 int currentTime = 0;
 int timeChange = 0;
+int lives = 3;
 PFont scoreFont;
 color r;
 int c=0;
@@ -63,6 +64,7 @@ void draw() {
     //create text for level and score
     text("Level " + level, 550, textHeight);
     text("Score: " + score, width/2, textHeight);
+    text("Lives: " + lives, 50, textHeight);
     //define currentTime variable
     currentTime = millis();
     //set timeChange to actual change in time
