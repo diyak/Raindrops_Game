@@ -207,6 +207,7 @@ void mousePressed() {
       timeChange = 0;
       c=0;
       d = 100;
+      lives = 3;
       //set conditions to create a new raindrop correspondent with array
       for (int i = 0; i<drop.length; i ++) {
         drop[i] = new Raindrop();
