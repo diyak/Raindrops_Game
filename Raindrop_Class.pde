@@ -23,6 +23,13 @@ class Raindrop {
   void drop() {
     vel.add(acc);
     loc.add(vel);
+    //set conditions for loss of a life
+    if (loc.y>height){
+      lives-=1;
+      loc.set(width*10,0);
+      vel.set(0,0);
+      acc.set(0,0);
+    }
   }
 }
 

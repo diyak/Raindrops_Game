@@ -29,7 +29,7 @@ class Catcher {
       drop.loc.set(-width, height*-1000);
       drop.vel.set(0, 0);
       //increase score by 1
-      score+=20;
+      score+=1;
     }
   }
 }

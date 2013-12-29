@@ -117,6 +117,40 @@ void draw() {
         }
       }
     }
+    if(lives==0){
+      //change background to white
+        background(360);
+        //define r as a rainbow spectrum of color
+        r = color(c, 100, 100);
+        c++;
+        if (c>=360) {
+          c = 0;
+        }
+        //set fill and size of text
+        fill(r);
+        textSize(75);
+        text("YOU LOSE!", width/2, height/2 - 100);
+        //create replay button
+        fill(282, 95, 99);
+        stroke(360, 100, 100);
+        strokeWeight(5);
+        ellipse(width/2, height/2, 100, 100);
+        fill(360);
+        //adjust text alignment, font, and height
+        textAlign(CENTER);
+        textFont(scoreFont, textHeight-6);
+        text("Play Again!", width/2, height/2, textHeight);
+        //set change in color when mouse is over button
+        if (dist(mouseX, mouseY, width/2, height/2)<=55) {
+          fill(360, 100, 100);
+          stroke(r);
+          ellipse(width/2, height/2, 100, 100);
+          fill(360);
+          textFont(scoreFont, textHeight-6);
+          text("Play Again!", width/2, height/2, textHeight);
+        }
+      }
+    
     //set time interval between each raindrop to 3000 milliseconds = 3 seconds
     if (timeChange>=3000) {
       index++;
