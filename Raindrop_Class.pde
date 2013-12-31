@@ -43,16 +43,16 @@ class Raindrop {
       vel.set(0,4);
     }
       if (level==5){
-      vel.set(0,5);
+      vel.set(0,4.5);
     }
       if (level==6){
-      vel.set(0,6);
+      vel.set(0,5);
     }
       if (level==7){
-      vel.set(0,7);
+      vel.set(0,5.5);
     }
       if (level==8){
-      vel.set(0,8);
+      vel.set(0,6);
     }
   }
 }

@@ -38,11 +38,10 @@ void setup() {
   //define scoreFont
   scoreFont = loadFont("Bauhaus93.vlw");
 }
-
 void draw() {
   //color background
   background(234, 99, 66);
-  if (run==false) {
+  if (run==false && end == false) {
     //create start button
     fill(331, 97, 99);
     stroke(137, 49, 100);
@@ -84,59 +83,19 @@ void draw() {
       //display and drop bonus raindrops
       pink[i].display();
       pink[i].drop();
-       //test for contact between raindrop and catcher
-       catcher.catchBonus(pink[i]);
+      //test for contact between raindrop and catcher
+      catcher.catchBonus(pink[i]);
     }
-      for (int i = 0; i<index; i++) {
-        //display and drop raindrops
-        drop[i].display();
-        drop[i].drop();
-        drop[i].checkLevel();
-        //test for contact between raindrop and catcher
-        catcher.catchIt(drop[i]);
-        //set conditions for winning game
-        if (score == 40)
-        {
-          //change background to white
-          background(360);
-          //define r as a rainbow spectrum of color
-          r = color(c, 100, 100);
-          c++;
-          if (c>=360) {
-            c = 0;
-          }
-          //set fill and size of text
-          fill(r);
-          textSize(75);
-          text("YOU WIN!", width/2, height/2 - 100);
-          //make raindrops go off of display
-          drop[i].loc.y = height + 100;
-          //create replay button
-          fill(282, 95, 99);
-          stroke(360, 100, 100);
-          strokeWeight(5);
-          ellipse(width/2, height/2, 100, 100);
-          fill(360);
-          //adjust text alignment, font, and height
-          textAlign(CENTER);
-          textFont(scoreFont, textHeight-6);
-          text("Play Again!", width/2, height/2, textHeight);
-          //set change in color when mouse is over button
-          if (dist(mouseX, mouseY, width/2, height/2)<=55) {
-            fill(360, 100, 100);
-            stroke(r);
-            ellipse(width/2, height/2, 100, 100);
-            fill(360);
-            textFont(scoreFont, textHeight-6);
-            text("Play Again!", width/2, height/2, textHeight);
-          }
-        }
-      }
-      //define conditions of game over
-      if (lives == 0) {
-        end = true;
-      }
-      if (end) {
+    for (int i = 0; i<index; i++) {
+      //display and drop raindrops
+      drop[i].display();
+      drop[i].drop();
+      drop[i].checkLevel();
+      //test for contact between raindrop and catcher
+      catcher.catchIt(drop[i]);
+      //set conditions for winning game
+      if (score == 40)
+      {
         //change background to white
         background(360);
         //define r as a rainbow spectrum of color
@@ -146,9 +105,11 @@ void draw() {
           c = 0;
         }
         //set fill and size of text
-        fill(0);
+        fill(r);
         textSize(75);
-        text("YOU LOSE!", width/2, height/2 - 100);
+        text("YOU WIN!", width/2, height/2 - 100);
+        //make raindrops go off of display
+        drop[i].loc.y = height + 100;
         //create replay button
         fill(282, 95, 99);
         stroke(360, 100, 100);
@@ -169,58 +130,96 @@ void draw() {
           text("Play Again!", width/2, height/2, textHeight);
         }
       }
-
-      //set time interval between each raindrop to 3000 milliseconds = 3 seconds
-      if (timeChange>=3000) {
-        index++;
-        oldTime = currentTime;
-      }
-      if (timeChange>=4000) {
-        bonus++;
-        oldTime = currentTime;
-      }
-      //create levels that decrease d by 20 every 5 points in score
-      if (score == 5) {
-        catcher.d = 80;
-        level = 2;
-      }
-      if (score == 10) {
-        catcher.d = 60;
-        level = 3;
-      }
-      if (score == 15) {
-        catcher.d = 40;
-        level = 4;
-      }
-      if (score == 20) {
-        catcher.d = 20;
-        level = 5;
-      }
-      if (score == 25) {
-        catcher.d = 10;
-        level = 6;
-      }
-      if (score == 30) {
-        catcher.d = 5;
-        level = 7;
-      }
-      if (score == 35) {
-        catcher.d = 1;
-        level = 8;
-      }
+    }
+    //define conditions of game over
+    if (lives == 0) {
+      end = true;
+      run =false;
+    }
+    //set time interval between each raindrop to 3000 milliseconds = 3 seconds
+    if (timeChange>=3000) {
+      index++;
+      oldTime = currentTime;
+    }
+    if (timeChange>=4000) {
+      bonus++;
+      oldTime = currentTime;
+    }
+    //create levels that decrease d by 20 every 5 points in score
+    if (score == 5) {
+      catcher.d = 80;
+      level = 2;
+    }
+    if (score == 10) {
+      catcher.d = 60;
+      level = 3;
+    }
+    if (score == 15) {
+      catcher.d = 40;
+      level = 4;
+    }
+    if (score == 20) {
+      catcher.d = 20;
+      level = 5;
+    }
+    if (score == 25) {
+      catcher.d = 10;
+      level = 6;
+    }
+    if (score == 30) {
+      catcher.d = 5;
+      level = 7;
+    }
+    if (score == 35) {
+      catcher.d = 1;
+      level = 8;
     }
   }
-  //set conditions for when mouse is pressed
-  void mousePressed() {
-    //when mouse is clicked inside button, run becomes opposite value
-    if (dist(mouseX, mouseY, width/2, height/2)<=55 && run==false) {
-      if (run == true) {
-        run = false;
-      }
-      if (run == false && end == false) {
-        run = true;
-        reset();
-      }
+  if (end && !run) {
+    //change background to white
+    background(360);
+    //define r as a rainbow spectrum of color
+    r = color(c, 100, 100);
+    c++;
+    if (c>=360) {
+      c = 0;
+    }
+    //set fill and size of text
+    fill(0);
+    textSize(75);
+    text("YOU LOSE!", width/2, height/2 - 100);
+    //create replay button
+    fill(282, 95, 99);
+    stroke(360, 100, 100);
+    strokeWeight(5);
+    ellipse(width/2, height/2, 100, 100);
+    fill(360);
+    //adjust text alignment, font, and height
+    textAlign(CENTER);
+    textFont(scoreFont, textHeight-6);
+    text("Play Again!", width/2, height/2, textHeight);
+    //set change in color when mouse is over button
+    if (dist(mouseX, mouseY, width/2, height/2)<=55) {
+      fill(360, 100, 100);
+      stroke(r);
+      ellipse(width/2, height/2, 100, 100);
+      fill(360);
+      textFont(scoreFont, textHeight-6);
+      text("Play Again!", width/2, height/2, textHeight);
     }
   }
-
+}
+//set conditions for when mouse is pressed
+void mousePressed() {
+  //when mouse is clicked inside button, run becomes opposite value
+  if (dist(mouseX, mouseY, width/2, height/2)<=55) {
+    if (run == false && end == false) {
+      run = true;
+      reset();
+    }
+    if (run == false && end == true) {
+      run = true;
+      reset();
+    }
+  }
+}
