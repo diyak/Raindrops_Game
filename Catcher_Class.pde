@@ -32,5 +32,16 @@ class Catcher {
       score+=1;
     }
   }
+  void catchBonus(Bonus pink) {
+       if (loc.dist(pink.loc) < d/2 + pink.d/2) {
+      //set location of raindrop to far below screen
+      pink.loc.set(-width, height*-1000);
+      pink.vel.set(0, 0);
+      //increase score by 2
+      score+=2;
+      //increase lives by 1
+      lives++;
+    }
+  }
 }
 
