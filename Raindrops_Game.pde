@@ -19,8 +19,9 @@ PFont scoreFont;
 color r;
 int c=0;
 int d = 100;
-boolean run=false;
+boolean run = false;
 boolean end = false;
+boolean win = false;
 void setup() {
   //change display size
   size(600, 600);
@@ -94,8 +95,10 @@ void draw() {
       //test for contact between raindrop and catcher
       catcher.catchIt(drop[i]);
       //set conditions for winning game
-      if (score == 40)
-      {
+      if (score == 40){
+        win = true;
+      }
+      if (win){
         //change background to white
         background(360);
         //define r as a rainbow spectrum of color
