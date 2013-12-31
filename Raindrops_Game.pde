@@ -95,10 +95,10 @@ void draw() {
       //test for contact between raindrop and catcher
       catcher.catchIt(drop[i]);
       //set conditions for winning game
-      if (score == 40){
+      if (score >= 40){
         win = true;
       }
-      if (win){
+      if (win && !run){
         //change background to white
         background(360);
         //define r as a rainbow spectrum of color
