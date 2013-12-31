@@ -5,6 +5,7 @@ void reset() {
   level = 1;
   n = 1;
   index = 1;
+  bonus = 1;
   oldTime = 0;
   currentTime = 0;
   timeChange = 0;
