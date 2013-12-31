@@ -91,6 +91,7 @@ void draw() {
         //display and drop raindrops
         drop[i].display();
         drop[i].drop();
+        drop[i].checkLevel();
         //test for contact between raindrop and catcher
         catcher.catchIt(drop[i]);
         //set conditions for winning game

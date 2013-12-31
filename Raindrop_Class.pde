@@ -31,5 +31,29 @@ class Raindrop {
       acc.set(0,0);
     }
   }
+  //increases acceleration for each level
+  void checkLevel(){
+    if (level==2){
+      vel.set(0,2);
+    }
+      if (level==3){
+      vel.set(0,3);
+    }
+      if (level==4){
+      vel.set(0,4);
+    }
+      if (level==5){
+      vel.set(0,5);
+    }
+      if (level==6){
+      vel.set(0,6);
+    }
+      if (level==7){
+      vel.set(0,7);
+    }
+      if (level==8){
+      vel.set(0,8);
+    }
+  }
 }
 
