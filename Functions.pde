@@ -12,6 +12,9 @@ void reset() {
   c=0;
   d = 100;
   lives = 3;
+  run = false;
+  end  = false;
+  win = false;
   //set conditions to create a new raindrop correspondent with array
   for (int i = 0; i<drop.length; i ++) {
     drop[i] = new Raindrop();
