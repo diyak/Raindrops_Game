@@ -64,7 +64,7 @@ void draw() {
     }
   }
   //set conditions for run==true
-  if (run) {
+  if (run && win) {
     //adjust text font, alignment, height, and color
     textFont(scoreFont, textHeight);
     fill(360);
@@ -95,10 +95,10 @@ void draw() {
       //test for contact between raindrop and catcher
       catcher.catchIt(drop[i]);
       //set conditions for winning game
-      if (score >= 40){
+      if (score == 40) {
         win = true;
       }
-      if (win && !run){
+      if (win) {
         //change background to white
         background(360);
         //define r as a rainbow spectrum of color
@@ -226,3 +226,4 @@ void mousePressed() {
     }
   }
 }
+

@@ -29,7 +29,7 @@ class Catcher {
       drop.loc.set(-width, height*-1000);
       drop.vel.set(0, 0);
       //increase score by 1
-      score+=10;
+      score+=40;
     }
   }
   void catchBonus(Bonus pink) {
