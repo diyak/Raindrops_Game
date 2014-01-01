@@ -37,8 +37,8 @@ class Catcher {
       //set location of raindrop to far below screen
       pink.loc.set(-width, height*-1000);
       pink.vel.set(0, 0);
-      //increase score by 2
-      score+=2;
+      //increase score by 1
+      score+=1;
       //increase lives by 1
       lives++;
     }
