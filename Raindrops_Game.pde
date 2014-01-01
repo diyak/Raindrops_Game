@@ -14,7 +14,7 @@ int bonus = 1;
 int oldTime = 0;
 int currentTime = 0;
 int timeChange = 0;
-int bonusTime = 0;
+int bonusOldTime = 0;
 int bonusChange = 0;
 int lives = 3;
 PFont scoreFont;
@@ -79,7 +79,7 @@ void draw() {
     currentTime = millis();
     //set timeChange to actual change in time
     timeChange = currentTime - oldTime;
-    bonusChange = currentTime - bonusTime;
+    bonusChange = currentTime - bonusOldTime;
     //display and refresh location of catcher
     catcher.display();
     catcher.refresh();
@@ -114,9 +114,9 @@ void draw() {
       index++;
       oldTime = currentTime;
     }
-    if (bonusChange>=4000) {
+    if (bonusChange>=random(10000, 60000)) {
       bonus++;
-     bonusTime = currentTime;
+     bonusOldTime = currentTime;
     }
     //create levels that decrease d by 20 every 5 points in score
     if (score == 5) {
