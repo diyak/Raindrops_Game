@@ -64,7 +64,7 @@ void draw() {
     }
   }
   //set conditions for run==true
-  if (run && win) {
+  if (run) {
     //adjust text font, alignment, height, and color
     textFont(scoreFont, textHeight);
     fill(360);
