@@ -53,6 +53,7 @@ EXTRA FEATURES:
 5.  8 fully-functional levels that increase the speed of the normal (blue) raindrops as well as decrease the size of the catcher in order to incorporate an element of challenge
 6.  A BONUS raindrop that is pink in color, falls at a random time interval between 10 seconds adn 1 minute, and provides an extra life when caught
 7.  There is no penalty when the bonus raindrop surpasses the bottom of the screen
+8. Unique font for all text
 
 
 POTENTIAL GLITCHES:
